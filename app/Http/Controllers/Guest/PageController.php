@@ -13,7 +13,7 @@ class PageController extends Controller
 
         $comics = comics::all();
         
-        return view('home', compact('comics'));
+        return view('home', compact('comics'))->name('homepage');
 
     }
 }
