@@ -13,7 +13,14 @@ class PageController extends Controller
 
         $comics = comics::all();
         
-        return view('home', compact('comics'))->name('homepage');
+        return view('home', compact('comics'));
 
+    }
+
+    public function show($id){
+
+        $comic = comics::find($id);
+
+        return view('/products/comic_show', compact('comic'));
     }
 }

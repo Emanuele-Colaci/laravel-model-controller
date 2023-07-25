@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="position-relative">
+    <div class="position-relative">
         <!-- JUMBOTRON -->
         <img class="jumbotron" src="{{Vite::asset('/resources/images/jumbotron.jpg')}}" alt="Jumbotron">
         <button class="position">CURRENT SERIES</button>
@@ -13,7 +13,7 @@
                 @foreach($comics as $comic)
                     <div class="col-12 col-md-6 col-lg-2 mt-5">
                         <div class="my-1 height-card">
-                            <a href="#"><img class="img-fluid card-img-top fumetti" src="{{ $comic['thumb'] }}" alt="{{ $comic['series'] }}"></a>
+                            <a href="{{ route('show', ['comic_show' => $comic['id']]) }}"><img class="img-fluid card-img-top fumetti" src="{{ $comic['thumb'] }}" alt="{{ $comic['series'] }}"></a>
                             <div class="card-body text-white mt-3">
                                 <span>{{ $comic['series'] }}</span>
                             </div>
